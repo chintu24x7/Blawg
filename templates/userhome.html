@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Userhome</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+              <a class="navbar-brand" href="#">Blawg</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/userhome">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/help">Help</a>
+                  </li>
+                                
+                </ul>
+                
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Hi {{username}}!!
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Profile</a>
+                      <a class="dropdown-item" href="/logout">Logout</a>
+                      
+                    </div>
+                </div>
+              </div>
+          </div>
+        </nav>
+        
+        <div class="container">
+          <p align=center>_________________________</p>
+          <div class="row">
+            
+              {% for tuple in info %}
+                            
+                  <div class="col-md-3 col-sm-6" align=center>
+                    <div class="thumbnail">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9EaZ_TgdP8T1SlENh6EnFNb9PTYXO7twSij29a9bIc1JDWmW8"></img>
+                    </div>  
+                    <div class="caption">
+                        <p>{{tuple[1]}}</p>
+                        <p><a class="btn btn-primary btn-large" href="/userhome/{{tuple[0]}}">View/Edit</a></p>    
+                    </div>
+                      
+                    
+                  </div>
+                  
+                
+              {% endfor %}
+            
+            
+          </div>
+          <div class="jumbotron">
+            <p ALIGN=CENTER> <a class="btn btn-primary btn-large" href="/userhome/new">Create new Blog</a> </p>  
+          </div>
+          
+          
+        </div>
+        
+
+</body>
+</html>
