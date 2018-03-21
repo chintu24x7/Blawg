@@ -10,9 +10,9 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 
 app.config['MYSQL_DATABASE_USER'] = 'chintu24x7'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'chintooo'
-app.config['MYSQL_DATABASE_DB'] = 'c9db'
-app.config['MYSQL_DATABASE_HOST'] = 'blawg-db.cm4klal7pqhs.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_DB'] = 'c9'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 
 conn = mysql.connect()
